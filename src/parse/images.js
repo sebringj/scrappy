@@ -7,12 +7,11 @@ function getImages() {
   var rectangle;
   for (var i = 0; i < imageList.length; i++) {
     img = imageList[i];
-    rectangle = img.getBoundingClientRect();
-    if (rectangle.width > 0 && rectangle.height > 0)
-      images.push({
-        src: img.src,
-        rectangle: rectangle
-      });
+    images.push({
+      src: img.src,
+      rectangle: img.getBoundingClientRect(),
+      tag: 'IMG'
+    });
   }
   return { images: images };
 }
