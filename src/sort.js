@@ -6,17 +6,17 @@ function sortByPosition(a, b) {
 }
 
 function sort(pageObj) {
-	var sorted = [];
-	Object.keys(pageObj).forEach(function(key) {
-		var arr = pageObj[key];
-		if (!Array.isArray(arr)) return;
-		if (arr.length <= 0 || !arr[0].rectangle) return;
-		arr.sort(sortByPosition);
-		sorted = sorted.concat(arr);
-	});
-	sorted.sort(sortByPosition);
-	pageObj.sorted = sorted;
-	return pageObj;
+  var sorted = [];
+  Object.keys(pageObj).forEach(function(key) {
+    var arr = pageObj[key];
+    if (!Array.isArray(arr)) return;
+    if (arr.length <= 0 || !arr[0].rectangle) return;
+    arr.sort(sortByPosition);
+    sorted = sorted.concat(arr);
+  });
+  sorted.sort(sortByPosition);
+  pageObj.sorted = sorted;
+  return pageObj;
 }
 
 module.exports = sort;
